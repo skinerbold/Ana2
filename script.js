@@ -65,9 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const touch = e.touches[0];
         const dragging = document.querySelector('.dragging');
         if (dragging) {
-            dragging.style.position = 'absolute';
-            dragging.style.left = `${touch.clientX - dragging.offsetWidth/2}px`;
-            dragging.style.top = `${touch.clientY - dragging.offsetHeight/2}px`;
+            const rect = dragging.getBoundingClientRect();
+            const offsetX = touch.clientX - (rect.width/2);
+            const offsetY = touch.clientY - (rect.height/2);
+            
+            dragging.style.position = 'fixed';
+            dragging.style.zIndex = '9999';
+            dragging.style.left = `${offsetX}px`;
+            dragging.style.top = `${offsetY}px`;
         }
     };
 
