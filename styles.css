@@ -252,6 +252,18 @@ h3 {
         object-fit: cover;
     }
 
+    .reset-button {
+        display: none !important;
+    }
+    .header-institucional {
+        justify-content: center;
+        padding: 1rem 0;
+    }
+    
+    .titulo-jogo {
+        max-width: 100%;
+        margin-bottom: 0.5rem;
+    }
     
     .images-container {
         grid-template-columns: repeat(4, 1fr);
