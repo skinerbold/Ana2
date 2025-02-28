@@ -233,23 +233,25 @@ h3 {
     }
     
     .container-videos {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1rem;
-        padding: 0 1rem;
-        justify-content: space-between;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        padding: 0 0.5rem;
+        gap: 0.5rem;
     }
-    
+
     .video-target {
-        width: calc(50% - 0.5rem);
-        height: auto;
-        aspect-ratio: 9/16;
-        max-width: none;
+        width: 48% !important;
+        height: 250px !important;
+        aspect-ratio: unset;
+        margin: 0;
+        flex-shrink: 0;
     }
-    
+
     .video-target > video {
-        object-fit: contain;
+        object-fit: cover;
     }
+
     
     .images-container {
         grid-template-columns: repeat(4, 1fr);
