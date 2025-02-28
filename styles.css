@@ -1,0 +1,291 @@
+:root {
+    --cor-principal: #8d334b;
+    --cor-botao: #fd9c69;
+    --vermelho-erro: #e74c3c;
+    --sombra: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-image: url('plano de fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.25rem;
+}
+
+.header-institucional {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.titulo-jogo {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px var(--sombra);
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    max-width: 1200px;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 4px 20px var(--sombra);
+    min-height: 80vh;
+}
+
+.videos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.container-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.video-target {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid var(--cor-principal);
+}
+
+.video-target > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.images-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .6rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 150px;
+}
+
+.draggable-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid var(--cor-principal);
+    border-radius: 8px;
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+.draggable-image:hover {
+    transform: scale(1.05);
+}
+
+.reset-button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--cor-botao);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    background: #83342e;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    transform: translateY(-.2rem);
+    box-shadow: 0 .9rem 1.25rem #aa6a48;
+    transition-duration: 1.5s;
+}
+
+.congrats-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    z-index: 1001;
+}
+
+#congratsVideo {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+#congrats-video {
+    border: #8d334b solid;
+    border-radius: .75rem;
+    max-height: 70vh;
+}
+
+.video-target.drag-over {
+    border-color: var(--cor-botao);
+    box-shadow: 0 0 15px rgba(253, 156, 105, 0.4);
+}
+
+.video-target.incorrect {
+    border-color: var(--vermelho-erro);
+    animation: shake 0.4s;
+}
+
+.game-completed .videos-container {
+    display: none;
+}
+
+#animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    margin: 2rem;
+    border-radius: .75rem;
+    box-shadow: 0 1rem 1rem 1rem #b9b8b8;
+}
+
+.video-ani {
+    width: 25%;
+}
+
+.a1 {
+    padding: 2rem;
+    margin-right: -15rem;
+}
+
+.a2 {
+    padding: 2rem;
+    margin-left: -15rem;
+}
+
+.div-ani {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .container-videos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+    
+    .video-target {
+        width: calc(50% - 0.5rem);
+        height: auto;
+        aspect-ratio: 9/16;
+        max-width: none;
+    }
+    
+    .video-target > video {
+        object-fit: contain;
+    }
+    
+    .images-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .draggable-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .congrats-container {
+        width: 95%;
+    }
+
+    #congrats-video {
+        max-height: 50vh;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .text-animation {
+        width: 90%;
+        margin: 1rem;
+    }
+
+    .video-ani {
+        width: 40%;
+    }
+
+    .a1, .a2 {
+        margin: 0;
+        padding: 0.5rem;
+    }
+}

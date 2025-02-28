@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;900&display=swap" rel="stylesheet">
+    <title>Jogo de Associação em Libras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header-institucional">
+        <h1 class="titulo-jogo">Jogo de Associação em Libras</h1>
+        <button id="resetButton" class="reset-button">Reiniciar Jogo</button>
+    </header>
+
+    <div class="container">
+        <div class="videos-container">
+            <h2>Conclua o desafio abaixo</h2>
+            <div class="container-videos">
+                <div class="video-target" data-command="video1">
+                    <video src="videos_comandos/video1/comando1.mp4" loop muted></video>
+                </div>
+                <div class="video-target" data-command="video2">
+                    <video src="videos_comandos/video2/comando2.mp4" loop muted></video>
+                </div>
+            </div>
+        </div>
+
+        <div id="congratsVideo">
+            <video src="parabens.mp4" id="congrats-video" loop muted></video>
+            <div id="animation">
+                <div class="text-animation">
+                    <div class="div-ani">
+                        <video class="video-ani a1" src="confetti_13374563.mp4" autoplay loop></video>
+                        <video class="video-ani a1" src="confetti_18545616.mp4"></video>
+                    </div>
+                    <h3>Parábens!!!</h3>
+                    <div class="div-ani">
+                        <video class="video-ani a2" src="confetti_13374563.mp4" autoplay loop></video>
+                        <video class="video-ani a2" src="confetti_18545616.mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="images-container">
+            <div class="grid-images">
+                <img src="imagens/imagem_video1/1.JPEG" draggable="true" data-match="video1" class="draggable-image">
+                <img src="imagens/imagem_video1/2.jpg" draggable="true" data-match="video1" class="draggable-image">
+                <img src="imagens/imagem_video1/3.jpg" draggable="true" data-match="video1" class="draggable-image">
+                <img src="imagens/imagem_video1/4.JPEG" draggable="true" data-match="video1" class="draggable-image">
+                <img src="imagens/imagem_video2/a.jpg" draggable="true" data-match="video2" class="draggable-image">
+                <img src="imagens/imagem_video2/b.jpg" draggable="true" data-match="video2" class="draggable-image">
+                <img src="imagens/imagem_video2/c.jpg" draggable="true" data-match="video2" class="draggable-image">
+                <img src="imagens/imagem_video2/d.jpg" draggable="true" data-match="video2" class="draggable-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
